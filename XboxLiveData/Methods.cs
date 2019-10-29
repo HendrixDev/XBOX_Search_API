@@ -19,7 +19,7 @@ namespace XboxLiveData
 
     public class Methods
     {
-        private const string token = "ee06b844f80442cbd14e8ed9024533e07c21b9d9";
+        private const string token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         private const string baseAddress = "https://xboxapi.com/";
 
         public static string GetXUID()
