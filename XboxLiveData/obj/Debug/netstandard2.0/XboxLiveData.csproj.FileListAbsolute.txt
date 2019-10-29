@@ -1,0 +1,9 @@
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\bin\Debug\netstandard2.0\XboxLiveData.deps.json
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\bin\Debug\netstandard2.0\XboxLiveData.dll
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\bin\Debug\netstandard2.0\XboxLiveData.pdb
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\obj\Debug\netstandard2.0\XboxLiveData.csprojAssemblyReference.cache
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\obj\Debug\netstandard2.0\XboxLiveData.csproj.CoreCompileInputs.cache
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\obj\Debug\netstandard2.0\XboxLiveData.AssemblyInfoInputs.cache
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\obj\Debug\netstandard2.0\XboxLiveData.AssemblyInfo.cs
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\obj\Debug\netstandard2.0\XboxLiveData.dll
+E:\Visual Studio 2017\XboxAPI\XboxLiveData\obj\Debug\netstandard2.0\XboxLiveData.pdb
