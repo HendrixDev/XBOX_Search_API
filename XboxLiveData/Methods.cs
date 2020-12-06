@@ -21,7 +21,7 @@ namespace XboxLiveData
     public class Methods
     {
         private const string token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-        private const string baseAddress = "https://xboxapi.com/";
+        private const string baseAddress = "https://xapi.us/";
 
         public static string GetXUID()
         {
@@ -33,7 +33,7 @@ namespace XboxLiveData
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = client.GetAsync("/v2/xuid/" + Credentials.GamerTag).Result;
                 ProfileInfo data = JsonConvert.DeserializeObject<ProfileInfo>(response.Content.ReadAsStringAsync().Result);
-                string xuid = data.XUID.ToString();
+                string xuid = data.xuid.ToString();
                 return xuid;
             }
         }
@@ -48,7 +48,7 @@ namespace XboxLiveData
                 client.DefaultRequestHeaders.Add("X-Auth", token);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.GetAsync("v2/" + Credentials.XUID + "/profile").Result;
+                HttpResponseMessage response = client.GetAsync("v2/" + Credentials.XUID + "/new-profile").Result;
                 HttpResponseMessage response2 = client.GetAsync("v2/" + Credentials.XUID + "/gamercard").Result;
 
                 ProfileInfo data = JsonConvert.DeserializeObject<ProfileInfo>(response.Content.ReadAsStringAsync().Result);
