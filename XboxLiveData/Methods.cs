@@ -53,26 +53,25 @@ namespace XboxLiveData
                 ProfileInfo data = JsonConvert.DeserializeObject<ProfileInfo>(response.Content.ReadAsStringAsync().Result);
                 Gamercard data2 = JsonConvert.DeserializeObject<Gamercard>(response2.Content.ReadAsStringAsync().Result);
 
+                foreach (PropertyInfo prop in data.detail.GetType().GetProperties())
+                {
+                    if (prop.GetValue(data.detail, null) == null)
+                    {
+                        prop.SetValue(data.detail, "Data not found");
+                    }
+                }
+
                 string noPlayerFound = "No info was found for that gamertag";
-                string gamerTag = data.Gamertag;
-                string gamerScore = data.Gamerscore.ToString();
-                string name = data.GameDisplayName;
-                string xboxOneRep = data.XboxOneRep;
-                string tenureLevel = data.TenureLevel.ToString();
-                string accountTier = data.AccountTier;
+                string gamerTag = data.gamertag;
+                string gamerScore = data.gamerScore.ToString();
+                string name = data.realName.ToString();
+                string xboxOneRep = data.xboxOneRep;
+                string tenureLevel = data.detail.tenure.ToString();
+                string accountTier = data.detail.accountTier;
                 string bio = data2.bio;
                 string motto = data2.motto;
-                string gamerPic = data.GameDisplayPicRaw;
-
-                if (bio == null || bio == "Code of Conduct")
-                {
-                    bio = "Data Not Found";
-                }
-
-                if (motto == null || motto == "Code of Conduct")
-                {
-                    motto = "Data Not Found";
-                }
+                string gamerPic = data.displayPicRaw;
+                string presenceText = data.presenceText;
 
                 string final = $"GamerTag:\t{gamerTag}\n" +
                                $"Gamer Score:\t{gamerScore}\n" +
@@ -81,6 +80,7 @@ namespace XboxLiveData
                                $"Tenure Level:\t{tenureLevel}\n" +
                                $"Bio:\t\t{bio}\n" +
                                $"Motto:\t\t{motto}\n" +
+                               $"Presence:\t{presenceText}\n" +
                                $"Gamer Pic:\n{gamerPic}";
 
                 if (string.IsNullOrEmpty(gamerTag))
